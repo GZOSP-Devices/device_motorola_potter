@@ -325,4 +325,7 @@
          The default is false. -->
     <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
 
+    <!-- Should proximity check also affect fingerprint reader-->
+    <bool name="config_proximityCheckOnFingerprintWake">true</bool>
+
 </resources>
