@@ -30,4 +30,7 @@
     <!-- Device specific doze package -->
     <string name="config_customDozePackage">org.lineageos.settings.device/org.lineageos.settings.device.DozeSettingsActivity</string>
 
+  <!-- Whether to enable "show operator name in the status bar" setting -->
+  <bool name="config_showOperatorNameInStatusBar">true</bool>
+
 </resources>
