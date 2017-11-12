@@ -26,6 +26,7 @@
 #
 
 import init.mmi.rc
+import init.safailnet.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
