@@ -68,8 +68,6 @@ import org.lineageos.settings.device.util.FileUtils;
 
 import java.util.List;
 
-import lineageos.providers.LineageSettings;
-
 import static org.lineageos.settings.device.actions.Constants.*;
 
 public class KeyHandler implements DeviceKeyHandler {
@@ -150,11 +148,13 @@ public class KeyHandler implements DeviceKeyHandler {
         mGestureWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
                 "GestureWakeLock");
 
-        final Resources resources = mContext.getResources();
+/*        final Resources resources = mContext.getResources();
         mProximityTimeOut = resources.getInteger(
-                org.lineageos.platform.internal.R.integer.config_proximityCheckTimeout);
+                com.android.internal.R.integer.config_proximityCheckTimeout);
         mProximityWakeSupported = resources.getBoolean(
-                org.lineageos.platform.internal.R.bool.config_proximityCheckOnWake);
+                com.android.internal.R.bool.config_proximityCheckOnWake);*/
+        mProximityTimeOut = 100;
+        mProximityWakeSupported = true;
 
         if (mProximityWakeSupported) {
             mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
@@ -703,10 +703,12 @@ public class KeyHandler implements DeviceKeyHandler {
         if (isProximityEnabledOnScreenOffGesturesFP() && !mFPScreenOffGesturesHandler.hasMessages(FP_ACTION_REQUEST)) {
             Message msg = mFPScreenOffGesturesHandler.obtainMessage(FP_ACTION_REQUEST);
             msg.arg1 = scanCode;
-            boolean defaultProximity = mContext.getResources().getBoolean(
-                    org.lineageos.platform.internal.R.bool.config_proximityCheckOnWakeEnabledByDefault);
-            boolean proximityWakeCheckEnabled = LineageSettings.System.getInt(mContext.getContentResolver(),
-                    LineageSettings.System.PROXIMITY_ON_WAKE, defaultProximity ? 1 : 0) == 1;
+/*            boolean defaultProximity = mContext.getResources().getBoolean(
+                    com.android.internal.R.bool.config_proximityCheckOnWakeEnabledByDefault);
+            boolean proximityWakeCheckEnabled = Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.PROXIMITY_ON_WAKE, defaultProximity ? 1 : 0) == 1;*/
+            boolean defaultProximity = true;
+            boolean proximityWakeCheckEnabled = true;
             if (mProximityWakeSupported && proximityWakeCheckEnabled && mProximitySensor != null) {
                 mFPScreenOffGesturesHandler.sendMessageDelayed(msg, mProximityTimeOut);
                 registerFPScreenOffListener(scanCode);
@@ -766,10 +768,12 @@ public class KeyHandler implements DeviceKeyHandler {
         if (isProximityEnabledOnScreenOffGestures() && !mScreenOffGesturesHandler.hasMessages(GESTURE_REQUEST)) {
             Message msg = mScreenOffGesturesHandler.obtainMessage(GESTURE_REQUEST);
             msg.arg1 = scanCode;
-            boolean defaultProximity = mContext.getResources().getBoolean(
-                    org.lineageos.platform.internal.R.bool.config_proximityCheckOnWakeEnabledByDefault);
-            boolean proximityWakeCheckEnabled = LineageSettings.System.getInt(mContext.getContentResolver(),
-                    LineageSettings.System.PROXIMITY_ON_WAKE, defaultProximity ? 1 : 0) == 1;
+/*             boolean defaultProximity = mContext.getResources().getBoolean(
+                     com.android.internal.R.bool.config_proximityCheckOnWakeEnabledByDefault);
+             boolean proximityWakeCheckEnabled = Settings.System.getInt(mContext.getContentResolver(),
+                     Settings.System.PROXIMITY_ON_WAKE, defaultProximity ? 1 : 0) == 1;*/
+            boolean defaultProximity = true;
+            boolean proximityWakeCheckEnabled = true;
             if (mProximityWakeSupported && proximityWakeCheckEnabled && mProximitySensor != null) {
                 mScreenOffGesturesHandler.sendMessageDelayed(msg, mProximityTimeOut);
                 registerScreenOffGesturesListener(scanCode);
