@@ -500,6 +500,10 @@ on property:persist.usb.chgdisabled=1
 on property:persist.usb.chgdisabled=0
     write /sys/class/power_supply/battery/charging_enabled 1
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b9ec8c3... potter: Start loc_launcher as gps user
 service vendor.qseecomd /vendor/bin/qseecomd
    class core
    user root
@@ -516,7 +520,6 @@ service vendor.thermal-engine /vendor/bin/thermal-engine
    socket thermal-send-rule stream 0660 system system
    group root
    writepid /dev/cpuset/system-background/tasks
-
 
 service vendor.time_daemon /vendor/bin/time_daemon
    class late_start
@@ -817,9 +820,9 @@ service dhcpcd_bnep4 /system/bin/dhcpcd -BKLG
     oneshot
 
 service vendor.loc_launcher /vendor/bin/loc_launcher
-    #loc_launcher will start as root and set its uid to gps
     class late_start
-    group gps inet oem_2950 wifi
+    user gps
+    group gps
     writepid /dev/cpuset/system-background/tasks
 
 service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqbalance.conf
