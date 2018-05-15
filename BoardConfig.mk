@@ -207,7 +207,6 @@ include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Sensor
-USE_SENSOR_MULTI_HAL := true
 BOARD_USES_MOT_SENSOR_HUB := true
 BOARD_USES_CAP_SENSOR_SX9310 := true
 MOT_SENSOR_HUB_HW_TYPE_L0 := true
