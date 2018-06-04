@@ -17,10 +17,16 @@ if ! [ "$sku" = "XT1683" ]; then
     # Others variants doesn't have DTV support
     rm /vendor/etc/permissions/com.motorola.hardware.dtv.xml
     rm /vendor/etc/permissions/mot_dtv_permissions.xml
+    rm /vendor/bin/hw/motorola.hardware.tv@1.0-service
+    rm /vendor/etc/init/motorola.hardware.tv@1.0-service.rc
     rm /vendor/lib/libdtvtuner.so
+    rm /vendor/lib/hw/motorola.hardware.tv@1.0-impl.so
+    rm /vendor/lib/motorola.hardware.tv@1.0.so
+    rm /vendor/lib/motorola.hardware.tv@1.0_vendor.so
     rm /vendor/lib64/libdtvtuner.so
-    rm /vendor/lib/libdtvhal.so
-    rm /vendor/lib64/libdtvhal.so
+    rm /vendor/lib64/hw/motorola.hardware.tv@1.0-impl.so
+    rm /vendor/lib64/motorola.hardware.tv@1.0.so
+    rm /vendor/lib64/motorola.hardware.tv@1.0_vendor.so
     rm -r /vendor/app/DTVPlayer
     rm -r /vendor/app/DTVService
 fi
