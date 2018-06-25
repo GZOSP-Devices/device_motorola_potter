@@ -390,6 +390,9 @@ PRODUCT_PACKAGES += \
     sensors.tof \
     sensors.tof.vl53l0
 
+# Shims
+PRODUCT_PACKAGES += \
+    libqsap_shim
 
 # Telephony
 PRODUCT_PACKAGES += \
