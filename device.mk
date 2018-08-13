@@ -136,8 +136,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/cacert_location.pem:$(TARGET_COPY_OUT_VENDOR)/etc/cacert_location.pem
 
 # MotoActions
-PRODUCT_PACKAGES += \
-    MotoActions
+#PRODUCT_PACKAGES += \
+#    MotoActions
 
 # Display
 PRODUCT_PACKAGES += \
