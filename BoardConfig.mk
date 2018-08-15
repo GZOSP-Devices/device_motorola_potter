@@ -229,6 +229,9 @@ MOT_SENSOR_HUB_FEATURE_GR := true
 # Thermal
 USE_DEVICE_SPECIFIC_THERMAL := true
 
+# VNDK
+PRODUCT_USE_VNDK_OVERRIDE := false
+
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
 BOARD_HAS_QCOM_WLAN_SDK          := true
