@@ -208,9 +208,7 @@ PRODUCT_PACKAGES += \
     libgnss \
     libgnsspps \
     android.hardware.gnss@1.1-impl-qti \
-    android.hardware.gnss@1.1-service-qti \
-    libqsap_sdk \
-    libqsap_shim
+    android.hardware.gnss@1.1-service-qti
 
 # health
 PRODUCT_PACKAGES += \
@@ -482,9 +480,3 @@ PRODUCT_PACKAGES += \
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
-
-PRODUCT_VENDOR_KERNEL_HEADERS := hardware/qcom/msm8996/kernel-headers
-
-PRODUCT_VENDOR_MOVE_ENABLED := true
-PRODUCT_FULL_TREBLE_OVERRIDE := true
-PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
