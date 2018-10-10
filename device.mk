@@ -392,6 +392,8 @@ PRODUCT_PACKAGES += \
 
 # Shims
 PRODUCT_PACKAGES += \
+    libshim_adsp \
+    libjustshoot_shim \
     libqsap_shim
 
 # Telephony
