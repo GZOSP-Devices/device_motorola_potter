@@ -3,7 +3,7 @@
     "remote": "github",
     "repository":  "GZR-Kernels/Optimus_Drunk_Potter",
     "target_path": "kernel/motorola/msm8953",
-    "branch": "9.0"
+    "branch": "9.0-hmp"
   },
   {
     "remote": "github",
