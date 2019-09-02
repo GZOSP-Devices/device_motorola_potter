@@ -326,6 +326,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
+# Properties
+-include $(LOCAL_PATH)/device_props.mk
 
 # Qualcomm
 PRODUCT_COPY_FILES += \
