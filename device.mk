@@ -207,7 +207,7 @@ PRODUCT_PACKAGES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.0-service.potter
+    android.hardware.health@2.0-service
 
 # IDC
 PRODUCT_COPY_FILES += \
